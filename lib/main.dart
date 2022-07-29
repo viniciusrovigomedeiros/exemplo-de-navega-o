@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/page-three.dart';
 import 'core/app_routes.dart';
 
 void main() {
@@ -18,13 +19,7 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(), // <- se for trabalhar com rotas nomeadas se uma o initialRoute no lugar do home:
       initialRoute: MyHomePage.route,
       routes: appRoutes,
-      onUnknownRoute: (context) {
-        return MaterialPageRoute(
-          builder: (context) {
-            return const Text('Página não encontrada');
-          },
-        );
-      },
+      onUnknownRoute: onUnKnowRoute,
     );
   }
 }
@@ -44,7 +39,8 @@ class MyHomePage extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             Navigator.of(context).pushNamed(
-              '/page-two',
+              //PageThree.route,
+              'nsadfnfasdnfsd', //para simular uma pagina nao encontrada descomentar essa linha e comentar a de cima
               arguments: 'Estou vindo da pagina inicial',
             );
           },
